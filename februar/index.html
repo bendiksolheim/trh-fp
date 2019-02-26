@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Hvordan i helsikke håndterer vi fravær av verdier?</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section data-markdown>
+                    https://trello.com/b/Zp0sY31x/trh-funksjonell-programmering
+                </section>
+                <section data-markdown>
+                    # Runde rundt bordet
+                </section>
+                <section data-markdown>
+                    # Elm
+                </section>
+                <section data-markdown>
+                    # Så.. Trenger vi egentlig if/else?
+                </section>
+				<section class="frontpage" data-markdown>
+                    # λ
+
+                    ## Fravær av verdier
+
+                    Note:
+                    Den egentlige planen for fagdagen, nå i litt mindre format
+                </section>
+                <section data-markdown>
+                    # Motivasjon
+
+                    Note:
+                    Et viktig poeng med FP: sikkerhet
+                    NullPointerException, NullReferenceException
+                    Monader
+                </section>
+                <section data-markdown>
+                    ![nullpointer](/assets/null-pointer.png)
+                </section>
+                <section data-markdown>
+                    ![nullpointer](/assets/feil.png)
+                </section>
+                <section data-markdown>
+                    ![nullpointer](/assets/fixed.png)
+                </section>
+                <section data-markdown>
+                    - null
+                    - nil
+                    - Nullable types
+                    - Maybe/Option
+                    - Null object pattern
+                    - Null coalescing operator
+                    - Safe navigation operator
+
+                    Note:
+                    Skulle tro konseptet null var enkelt: enten støttes null, eller ikke, meeeeen..
+                </section>
+                <section data-markdown>
+                    # Den imperative verden
+
+                    Note:
+                    Starter imperativt
+                    Mulig brannfakkel? I den imperative verden er det null som gjelder
+                </section>
+                <section data-markdown>
+                    ## null / nil / undefined / void 0
+
+                    Note:
+                    Støtte i kompilatoren
+                    Usynlig
+                    Kuriositet: nil i Objective-C
+                </section>
+                <section data-markdown>
+                    ## Null object pattern
+                    [C#](https://en.wikipedia.org/wiki/Null_object_pattern#C#)
+                </section>
+                <section data-markdown>
+                    # Grenseland
+                </section>
+                <section data-markdown>
+                    ## Nullable types
+                    [Kotlin](https://kotlinlang.org/docs/reference/null-safety.html)
+                </section>
+                <section data-markdown>
+                    ## Null coalescing operator / Elvis operator
+
+                    ### val a = b ?: c
+
+                    [Null coalescing operator](https://en.wikipedia.org/wiki/Null_coalescing_operator)
+
+                    [Elvis operator](https://en.wikipedia.org/wiki/Elvis_operator)
+                </section>
+                <section data-markdown>
+                    ## Safe navigation operator
+                    ### value?.subValue
+
+                    [Safe navigation operator](https://en.wikipedia.org/wiki/Safe_navigation_operator)
+                </section>
+                <section data-markdown>
+                    # FP-land
+                </section>
+                <section data-markdown>
+                    ## Option
+
+                    [Elm](https://github.com/elm/core/blob/1.0.2/src/Maybe.elm#L39)
+                </section>
+                <section data-markdown>
+                    ## Men hva gjør vi i Java, C# og JavaScript?
+
+                    Note:
+                    Vi må jo kunne ta med oss noe hjem her!
+                </section>
+                <section data-markdown>
+                    ## Java
+
+                    [vavr.io](http://www.vavr.io)
+
+                    [Kotlin](https://kotlinlang.org)
+
+                    Note:
+                    Aller helst Kotlin, kanskje?
+                </section>
+                <section data-markdown>
+                    ## C# #
+                    [Nullable reference types](https://blogg.bekk.no/la-ditt-neste-c-prosjekt-vere-non-nullable-a1016d29af05)
+
+                    (terminal)
+
+                    Note:
+                    Prøvde å finne noe tilsvarende vavr, men uten hell
+                </section>
+                <section data-markdown>
+                    # JavaScript
+
+                    [Sancuary](https://github.com/sanctuary-js/sanctuary)
+
+                    Note:
+                    Her er det mye å velge mellom. Lodash, Ramda, and so on.
+                </section>
+                <section data-markdown>
+                    https://youtu.be/6f5dt923FmQ
+                </section data-markdown>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                transition: 'fade',
+                showSlideNumber: 'speaker',
+                slideNumber: 'c/t',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
